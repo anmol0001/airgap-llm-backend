@@ -26,6 +26,16 @@ This project is designed to showcase **real backend engineering skills** such as
 ---
 
 ## 🏗️ Architecture Overview
+### 🏗️ High-Level Architecture
+
+![Air-Gapped LLM Backend Architecture](docs/architecture.png)
+
+**Description:**
+- Clients communicate with the backend over HTTPS
+- The Node.js backend handles authentication, RBAC, rate limiting, ingestion, and RAG logic
+- An offline LLM (Ollama) runs as a separate container
+- Embeddings and uploaded files are persisted via Docker volumes
+- All services run inside an isolated Docker network suitable for air-gapped environments
 ```text
 Client
 ↓ HTTPS
@@ -121,7 +131,7 @@ Certificates are mounted at runtime and never committed.
 From repository root:
 ```bash
 docker compose build
-docker compose up
+docker compose up -d
 ```
 ---
 
