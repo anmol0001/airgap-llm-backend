@@ -27,7 +27,7 @@ This project is designed to showcase **real backend engineering skills** such as
 
 ## 🏗️ Architecture Overview
 <p align="center">
-  <img src="docs/architecture.png" width="750" alt="Air-gapped LLM Backend Architecture" />
+  <img src="docs/architecture.png" width="700" alt="Air-gapped LLM Backend Architecture" />
   <br/>
   <em>High-level architecture of the air-gapped LLM backend</em>
 </p>
