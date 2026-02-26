@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+      - ./models:/models
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8443:8443"
+    env_file:
+      - ./backend/.env
+    volumes:
+      # - ./backend:/app        # 🔥 LIVE CODE
+      - ./certs:/certs:ro
+      - ./backend/storage:/app/storage
+      - ./backend/uploads:/uploads
+
+    depends_on:
+      - ollama
+
+volumes:
+  ollama-data:

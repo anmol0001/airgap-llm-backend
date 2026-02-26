@@ -1,0 +1,26 @@
+# Node
+backend/node_modules/
+backend/npm-debug.log*
+backend/package-lock.json
+
+# Environment / secrets
+.env
+.env.*
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Docker
+.dockerignore
+
+# Uploads & generated data
+backend/uploads
+
+# OS
+.DS_Store
+
+# Certificates
+certs/*.pem
+
+
+
