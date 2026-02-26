@@ -99,12 +99,63 @@ Ollama (Offline LLM)
   - `8443` → backend
   - `11434` → Ollama
 
+## 💻 Hardware Requirements
+
+This project is designed to run on **commodity hardware** and does **not require a GPU** for basic usage.
+
+### ✅ Minimum Requirements (Demo / Interview / Learning)
+
+- **CPU**: 4 cores (Intel i5 / Ryzen 5 or equivalent)
+- **RAM**: 8 GB
+- **Storage**: 15–20 GB free disk space
+- **OS**:
+  - Linux (recommended)
+  - macOS (Intel / Apple Silicon)
+  - Windows (via Docker Desktop)
+- **Docker**: Docker Engine + Docker Compose
+
+> Suitable for interviews, demos, and local development.
+
+---
+
+### ⚡ Recommended Requirements (Smoother Experience)
+
+- **CPU**: 6–8 cores
+- **RAM**: 16 GB
+- **Storage**: SSD with 30+ GB free space
+- **OS**: Linux / macOS
+- **Docker**: Native Docker (not VM-limited)
+
+> Recommended if ingesting multiple documents or running longer LLM prompts.
+
+---
+
+### 🚫 GPU Requirements
+
+- **GPU is NOT required**
+- The backend uses **CPU-based inference**
+- Ollama runs models in CPU mode by default
+
+> GPU acceleration can be added later but is intentionally avoided to keep the system air-gap friendly.
+
+---
+
+### 🧠 Notes for Air-Gapped Environments
+
+- All models are downloaded **once** and persisted locally
+- No internet access is required after initial setup
+- Suitable for:
+  - Secure networks
+  - Intranet deployments
+  - Restricted enterprise systems
+
 ---
 
 ## 🔐 Environment Setup
 
 ```bash
 cd backend
+npm install
 cp .env.example .env
 ```
 Set at least:
